@@ -29,21 +29,21 @@ public:
             }
         }
         
-        int maxlen=0;
-        string ans;
-        
+        int maxlen=1;
+        int start=0;
         for(int i=0;i<n;i++){
             for(int j=i;j<n;j++){
                 if(dp[i][j]){
                     int len=j-i+1;
                     if(len>maxlen){
                         maxlen=len;
-                        ans=s.substr(i,len);
+                        // ans=s.substr(i,len);
+                        start=i;
                     }
                 }
             }
         }
         
-        return ans;
+        return s.substr(start,maxlen);
     }
 };
